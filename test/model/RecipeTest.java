@@ -28,6 +28,7 @@ class RecipeTest {
         recipe.addIngredient("Sal", 12);
 
         assertEquals("Sal", recipe.getIngredient("Sal"));
+        assertEquals(12, recipe.getIngredients().get(0).getWeight());
         assertEquals(1, recipe.getIngredients().size());
     }
 
@@ -37,6 +38,7 @@ class RecipeTest {
 
         recipe.addIngredient("Pimienta", 6);
         assertEquals("Pimienta", recipe.getIngredient("Pimienta"));
+        assertEquals(6, recipe.getIngredients().get(3).getWeight());
         assertEquals(3, recipe.getIngredientPos("Pimienta"));
         assertEquals(4, recipe.getIngredients().size());
 
@@ -59,6 +61,8 @@ class RecipeTest {
 
         assertEquals(2, recipe.getIngredients().size());
         assertEquals(null, recipe.getIngredient("ajo"));
+        assertEquals("cebolla", recipe.getIngredient("cebolla"));
+        assertEquals("arroz", recipe.getIngredient("arroz"));
     }
 
 }
